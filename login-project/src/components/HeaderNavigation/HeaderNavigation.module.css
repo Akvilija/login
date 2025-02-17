@@ -1,0 +1,23 @@
+.navigation {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.navigation li a {
+    color: var(--header-navigation-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding-right: 25px;
+}
+
+.navigation li a:hover {
+    color: rgb(148, 177, 203);
+}
+
+.iconPadding {
+    margin-right: 10px;
+}
