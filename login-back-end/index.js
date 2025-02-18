@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 const { connectToDB } = require('./db')
 const authRoutes = require('./routes/authRoutes')
+const profileRoutes = require('./routes/profileRoutes')
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.use(express.json())
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/api/auth', authRoutes)
+app.use('/api/profile', profileRoutes)
 
 const port = process.env.PORT || 3000
 
