@@ -8,7 +8,7 @@ exports.loginUser = async (email, password) => {
     const isMatch = await comparePassword(password, user.password)
     if (!isMatch) return null
   
-    const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user._id, email: user.email }, 'your_jwt_secret', { expiresIn: '1h' });
     return { token }
   }
 

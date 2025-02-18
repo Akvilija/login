@@ -19,4 +19,13 @@ async function comparePassword(enteredPassword, hashedPassword) {
   return await bcrypt.compare(enteredPassword, hashedPassword)
 }
 
-module.exports = { createUser, findUserByEmail, comparePassword }
+async function updateProfilePicture(userId, imageUrl) {
+  const db = getDB()
+  const result = await db.collection('users').updateOne(
+    { _id: userId },
+    { $set: { profilePicture: imageUrl }}
+  )
+  return result.modifiedCount > 0
+}
+
+module.exports = { createUser, findUserByEmail, comparePassword, updateProfilePicture }
